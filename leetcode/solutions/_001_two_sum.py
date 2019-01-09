@@ -12,8 +12,3 @@ class Solution:
                 return (dict[completion], i)
             else:
                 dict[nums[i]] = i
-
-
-items = [3, 3]
-print(Solution().twoSum(items, 6))
-print(items)
