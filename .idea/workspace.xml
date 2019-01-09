@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3d64c64-fb7b-48f4-a22e-a675d43109d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/leetcode/solutions/_004_median_of_two_sorted_array.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/tests/_004.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcode/solutions/_005_longest_palindrome.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcode/tests/_005.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/solutions/001_two_sum.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/solutions/002_add_two_numbers.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +33,29 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/leetcode/solutions/_005_longest_palindrome.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="15" column="79" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/leetcode/tests/_005.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,6 +83,8 @@
         <option value="$PROJECT_DIR$/leetcode/solutions/_001_two_sum.py" />
         <option value="$PROJECT_DIR$/leetcode/solutions/_004_median_of_two_sorted_array.py" />
         <option value="$PROJECT_DIR$/leetcode/tests/_004.py" />
+        <option value="$PROJECT_DIR$/leetcode/tests/_005.py" />
+        <option value="$PROJECT_DIR$/leetcode/solutions/_005_longest_palindrome.py" />
       </list>
     </option>
   </component>
@@ -92,6 +114,18 @@
               <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
               <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -199,7 +233,7 @@
       <workItem from="1546938438654" duration="11992000" />
       <workItem from="1547007478969" duration="663000" />
       <workItem from="1547008182565" duration="649000" />
-      <workItem from="1547009224470" duration="9532000" />
+      <workItem from="1547009224470" duration="12667000" />
     </task>
     <servers />
   </component>
@@ -236,7 +270,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22836000" />
+    <option name="totallyTimeSpent" value="25971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -249,6 +283,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-112" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17475192" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -410,6 +445,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
           <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/tests/_005.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/solutions/_005_longest_palindrome.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="79" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
         </state>
       </provider>
     </entry>
