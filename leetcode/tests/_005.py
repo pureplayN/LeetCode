@@ -14,7 +14,9 @@ class LongestPalindrome(unittest.TestCase):
             'babad': ['bab', 'aba'],
             'cbbd': ['bb'],
             'aaaaaaaa': ['aaaaaaaa'],
-            'acbaaabcvkycb': ['cbaaabc']
+            'acbaaabcvkycb': ['cbaaabc'],
+            'aabcdsrfg': ['aa'],
+            'qwertyuioo': ['oo']
         }
         for (s, r) in samples.items():
             result = self.solution.longestPalindrome(s)
