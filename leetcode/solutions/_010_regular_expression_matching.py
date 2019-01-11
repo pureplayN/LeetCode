@@ -9,59 +9,70 @@ class Solution:
             return True
         if len(s) > 0 and len(p) == 0:
             return False
+        if p[0] == '*':
+            raise Exception('Invalid pattern:' + p)
 
-        match, start, stop = self.__isFixedSliceMatch(p, s)
-        if match and start < 0:
+        match, headMatchCount, tearMatchCount = self.__isFixedSliceMatch(s, p)
+        if not match:
+            return False
+        if match and headMatchCount == len(p):
             return True
 
-        unfixedS, unfixedP = s[start:stop - start + 1], p[start:stop - start + 1]
+        unfixedS = s[headMatchCount:len(s) - tearMatchCount]
+        unfixedP = p[headMatchCount:len(p) - tearMatchCount]
         if len(unfixedP) == 2:
             if unfixedP[0] == '.':
                 return True
-            elif p[0] == '*':
+            elif unfixedP[0] == '*':
                 raise Exception('Invalid pattern:' + p)
             else:
                 for c in unfixedS:
-                    if c != p[0]:
+                    if c != unfixedP[0]:
                         return False
                 return True
         elif len(unfixedP) == 3:
             raise Exception('Invalid pattern:' + p)
         else:
-            subP = p[2:0]
-            thisUnfixed = p[0:2]
+            subP = unfixedP[2:]
+            thisUnfixed = unfixedP[0:2]
             matchSub = False
             shifting = 0
-            while (not matchSub) and self.isMatch(s[0:shifting], thisUnfixed)\
-                and shifting < len(s):
-                matchSub = self.isMatch(s[shifting:], subP)
+            while shifting <= len(unfixedS) and (not matchSub) and self.isMatch(unfixedS[0:shifting], thisUnfixed):
+                matchSub = self.isMatch(unfixedS[shifting:], subP)
                 shifting += 1
             return matchSub
 
-    def __isFixedSliceMatch(self, p, s):
-        if len(p) == 2 and p[1] == '*':
-            return True, 0, 2
-        elif len(s) == 0:
-            return False, -1, -1
-
+    def __isFixedSliceMatch(self, s, p):
         complete = True
-        unfixedStartIndex, unfixedStopIndex = -1, -1
+        headMatchCount, tearMatchCount = 0, 0
         for i in range(0, len(p)):
             if i + 1 < len(p) and p[i+1] == '*':
                 complete = False
-                unfixedStartIndex = i
                 break
-            elif p[i] != s[i]:
+            elif i >= len(s):
+                return False, -1, -1
+            elif p[i] == s[i] or p[i] == '.':
+                headMatchCount += 1
+            else:
                 return False, -1, -1
 
         if not complete:
-            for i in range(len(p) - 1, -1, -1):
-                if i == '*':
-                    unfixedStopIndex = i
+            s = s[headMatchCount:]
+            for i in range(1, len(p)):
+                pIndex = len(p) - i
+                sIndex = len(s) - i
+                if p[pIndex] == '*':
                     break
-                elif p[i] == s[i]:
+                elif sIndex < 0:
                     return False, -1, -1
-        return True, unfixedStartIndex, unfixedStopIndex
+                elif p[pIndex] == s[sIndex] or p[pIndex] == '.':
+                    tearMatchCount += 1
+                else:
+                    return False, -1, -1
+        elif len(s) > headMatchCount:
+            return False, -1, -1
+
+        return True, headMatchCount, tearMatchCount
 
 
 

@@ -13,10 +13,15 @@ class RegularExpressionTest(unittest.TestCase):
         p = 'aabbcdd'
         self.assertFalse(self.solution.isMatch(s, p))
 
+    def testStringShoterThanPattern(self):
+        s = 'aabbcc'
+        p = 'aabbccddee'
+        self.assertFalse(self.solution.isMatch(s, p))
+
     def testPureStringMatch(self):
-        s = 'a'
+        s = 'aa'
         p = 'a'
-        self.assertTrue(self.solution.isMatch(s, p))
+        self.assertFalse(self.solution.isMatch(s, p))
 
     def testEmptyMatch(self):
         s = ''
@@ -39,7 +44,7 @@ class RegularExpressionTest(unittest.TestCase):
 
     def testStartWithAnySubStringNotMatch(self):
         s = 'kmfkdlkdkijdskdsidskdskijdskds'
-        p = '*jdskdsj'
+        p = '.*jdskdsj'
         self.assertFalse(self.solution.isMatch(s, p))
 
     def testSingleCharRepeatingMatch(self):
@@ -55,3 +60,33 @@ class RegularExpressionTest(unittest.TestCase):
         s = 'iii'
         p = 'i*iiii'
         self.assertFalse(self.solution.isMatch(s, p))
+
+    def testSample(self):
+        s = 'ac'
+        p = '..c*b*ac*.bc*bb*'
+        self.assertFalse(self.solution.isMatch(s, p))
+
+        s = "bbaaccbaaccaccac"
+        p = ".*..c*b*ac*.bc*bb*"
+        self.assertFalse(self.solution.isMatch(s, p))
+        s = ""
+        p = "c*c*"
+        self.assertTrue(self.solution.isMatch(s, p))
+
+        s ="aaa"
+        p ="ab*a*c*a"
+        self.assertTrue(self.solution.isMatch(s, p))
+
+        s = "mississippi"
+        p = "mis*is*ip*."
+        self.assertTrue(self.solution.isMatch(s, p))
+
+        s = "aab"
+        p = "c*a*b"
+        self.assertTrue(self.solution.isMatch(s, p))
+
+        s = 'aa'
+        p = 'a*'
+        self.assertTrue(self.solution.isMatch(s, p))
+
+
